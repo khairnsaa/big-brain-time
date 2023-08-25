@@ -11,7 +11,7 @@
 // Output: 1
 // Explanation: The altitudes are [0,-5,-4,1,1,-6]. The highest is 1.
 
-// solution
+// solution 1
 var largestAltitude = function(gain) {
     let altitude = 0
     const answer=[altitude]
@@ -20,4 +20,15 @@ var largestAltitude = function(gain) {
         answer.push(altitude)
     } 
     return Math.max(...answer)
+};
+
+// solution 2
+var largestAltitude = function(gain) {
+    let altitude = 0
+    let maxAltitude = 0
+    for(let i=0; i<gain.length; i++){
+        altitude+=gain[i]
+        maxAltitude = Math.max(maxAltitude, altitude)
+    } 
+    return maxAltitude
 };
